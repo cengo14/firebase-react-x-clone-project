@@ -49,19 +49,23 @@ const FormComp = ({ value }) => {
       onSubmit={handleSubmit}
       className="border-b border-zinc-600 p-5 flex items-start gap-3"
     >
-      {value.userData?.avatarURL !== null &&
-      value.currentUser?.photoURL !== null ? (
+      {value.userData.avatarURL === null &&
+      value.currentUser.photoURL === null ? (
         <img
-          className="rounded-full w-10"
+          className="rounded-full size-12 max-md:size-8"
+          src={avatarPic}
+          alt="user"
+        />
+      ) : (
+        <img
+          className="rounded-full size-12 max-md:size-8"
           src={
             value.userData
-              ? value.userData?.avatarURL
+              ? value.userData.avatarURL
               : value.currentUser?.photoURL
           }
           alt="user"
         />
-      ) : (
-        <img className="rounded-full w-10" src={avatarPic} alt="user" />
       )}
       <div className="w-full">
         <textarea

@@ -6,6 +6,8 @@ import ExitModal from "../../components/modal/ExitModal";
 import avatarPic from "../../assets/avatar.png";
 
 const Nav = ({ value, loading }) => {
+  console.log(value.userData);
+
   const [isExit, setIsExit] = useState(false);
   return (
     <nav className="flex flex-col justify-between items-center py-4">
@@ -37,21 +39,21 @@ const Nav = ({ value, loading }) => {
             onClick={() => setIsExit(!isExit)}
             className="flex items-center gap-2 relative cursor-pointer"
           >
-            {value.userData?.avatarURL !== null &&
-            value.currentUser?.photoURL !== null ? (
+            {value.userData.avatarURL === null &&
+            value.currentUser.photoURL === null ? (
               <img
                 className="rounded-full size-12 max-md:size-8"
-                src={
-                  value.userData
-                    ? value.userData?.avatarURL
-                    : value.currentUser?.photoURL
-                }
+                src={avatarPic}
                 alt="user"
               />
             ) : (
               <img
                 className="rounded-full size-12 max-md:size-8"
-                src={avatarPic}
+                src={
+                  value.userData
+                    ? value.userData.avatarURL
+                    : value.currentUser?.photoURL
+                }
                 alt="user"
               />
             )}
