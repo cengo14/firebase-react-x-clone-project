@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  input {
+    @apply text-black rounded mt-1 p-2 outline-none shadow-lg hover:shadow-[gray];
+  }
+}
+
+.feed {
+  display: grid;
+  grid-template-columns: 1fr minmax(400px, 600px) 1fr;
+}
+
+.hide-scrollbar {
+  overflow-y: scroll;
+  /* Dikey kaydırma özelliği aktif */
+  scrollbar-width: none;
+  /* Firefox için scrollbar'ı gizle */
+}
+
+/* Chrome, Edge ve Safari için */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+  /* Webkit tarayıcılar için scrollbar'ı gizle */
+}
