@@ -39,8 +39,8 @@ const Nav = ({ value, loading }) => {
             onClick={() => setIsExit(!isExit)}
             className="flex items-center gap-2 relative cursor-pointer"
           >
-            {value.userData.avatarURL === null &&
-            value.currentUser.photoURL === null ? (
+            {value.userData?.avatarURL === null &&
+            value.currentUser?.photoURL === null ? (
               <img
                 className="rounded-full size-12 max-md:size-8"
                 src={avatarPic}

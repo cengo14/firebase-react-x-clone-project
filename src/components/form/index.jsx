@@ -49,8 +49,8 @@ const FormComp = ({ value }) => {
       onSubmit={handleSubmit}
       className="border-b border-zinc-600 p-5 flex items-start gap-3"
     >
-      {value.userData.avatarURL === null &&
-      value.currentUser.photoURL === null ? (
+      {value.userData?.avatarURL === null &&
+      value.currentUser?.photoURL === null ? (
         <img
           className="rounded-full size-12 max-md:size-8"
           src={avatarPic}
