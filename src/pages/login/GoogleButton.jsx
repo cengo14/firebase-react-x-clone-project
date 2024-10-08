@@ -3,7 +3,7 @@ import React from "react";
 import { auth, provider } from "../../firebase";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-
+import gLogo from "../../assets/G-logo.png";
 const GoogleButton = ({ isSignUp }) => {
   const navigate = useNavigate();
   const handleClick = () => {
@@ -19,7 +19,7 @@ const GoogleButton = ({ isSignUp }) => {
       onClick={handleClick}
       className="flex items-center px-10 justify-center py-1 bg-slate-50 text-black rounded-3xl hover:bg-slate-200 cursor-pointer text-base whitespace-nowrap"
     >
-      <img className="size-8 " src="/public/G-logo.png" alt="google logo" />
+      <img className="size-8 " src={gLogo} alt="google logo" />
       <p>Google ile giriş yapın</p>
     </div>
   );

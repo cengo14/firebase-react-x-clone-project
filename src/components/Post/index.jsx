@@ -1,7 +1,7 @@
 import React from "react";
 import UserInfo from "./UserInfo";
 import Content from "./Content";
-
+import avatarPic from "../../assets/avatar.png";
 import Buttons from "./Buttons";
 import RightMenu from "./RightMenu";
 
@@ -19,7 +19,7 @@ const Post = ({ post, value }) => {
       ) : (
         <img
           className="size-12 rounded-full"
-          src="./public/avatar.png"
+          src={avatarPic}
           alt="user-avatar"
         />
       )}

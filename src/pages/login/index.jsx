@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import GoogleButton from "./GoogleButton";
 import Form from "./Form";
-
+import xLogo from "../../assets/x-logo.png";
 const LoginPage = () => {
   const [isSignUp, setIsSignUp] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +18,7 @@ const LoginPage = () => {
     <div className="h-screen grid place-items-center">
       <div className=" rounded-lg flex flex-col gap-6">
         <div className="flex justify-center">
-          <img className="size-[100px]" src="/public/x-logo.png" alt="x logo" />
+          <img className="size-[100px]" src={xLogo} alt="x logo" />
         </div>
         <h1 className="text-2xl font-bold">Şu anda olup bitenler</h1>
 

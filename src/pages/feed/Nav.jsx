@@ -1,20 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import { navSections } from "./../../utils/constant";
-import { BiSolidDoorOpen } from "react-icons/bi";
-import { signOut } from "firebase/auth";
-import { auth } from "../../firebase";
-import { BsThreeDots } from "react-icons/bs";
+import xLogo from "../../assets/x-logo.png";
 import ExitModal from "../../components/modal/ExitModal";
+import avatarPic from "../../assets/avatar.png";
 
 const Nav = ({ value, loading }) => {
-  console.log(value);
-
   const [isExit, setIsExit] = useState(false);
   return (
     <nav className="flex flex-col justify-between items-center py-4">
       <div>
-        <img className="w-14 mb-4" src="./public/x-logo.png" alt="xlogo" />
+        <img className="w-14 mb-4" src={xLogo} alt="xlogo" />
         {navSections.map((i, key) => (
           <div
             className="flex items-center gap-3 text-2xl md:text-3xl p-3 cursor-pointer rounded-lg hover:bg-zinc-900 transition-all max-md:justify-center "
@@ -41,23 +37,19 @@ const Nav = ({ value, loading }) => {
             onClick={() => setIsExit(!isExit)}
             className="flex items-center gap-2 relative cursor-pointer"
           >
-            {value.userData.avatarURL !== null &&
-            value.currentUser.photoURL !== null ? (
+            {value.userData?.avatarURL !== null &&
+            value.currentUser?.photoURL !== null ? (
               <img
                 className="rounded-full w-12"
                 src={
                   value.userData
-                    ? value.userData.avatarURL
-                    : value.currentUser.photoURL
+                    ? value.userData?.avatarURL
+                    : value.currentUser?.photoURL
                 }
                 alt="user"
               />
             ) : (
-              <img
-                className="rounded-full w-12"
-                src="./public/avatar.png"
-                alt="user"
-              />
+              <img className="rounded-full w-12" src={avatarPic} alt="user" />
             )}
 
             <div className="max-md:hidden flex flex-col gap-[2px]">
