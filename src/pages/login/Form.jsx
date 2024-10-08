@@ -15,6 +15,8 @@ import { useNavigate } from "react-router-dom";
 import MailModal from "../../components/modal/MailModal";
 import { BiSolidHide } from "react-icons/bi";
 import { FaEye } from "react-icons/fa";
+import xLogo from "../../assets/x-logo.png";
+import uploadImage from "../../assets/image-upload.png";
 
 const Form = ({ isSignUp, setIsSignUp, close }) => {
   const [email, setEmail] = useState("");
@@ -130,7 +132,7 @@ const Form = ({ isSignUp, setIsSignUp, close }) => {
           onSubmit={handleSubmit}
           className="flex flex-col text-start gap-3 py-12 px-28 max-md:px-16 max-md:py-8 "
         >
-          <img className="w-20 mx-auto" src="./public/x-logo.png" alt="" />
+          <img className="w-20 mx-auto" src={xLogo} alt="" />
           {isSignUp && (
             <div className="flex flex-col gap-2">
               <div className="flex items-center gap-3">
@@ -152,7 +154,7 @@ const Form = ({ isSignUp, setIsSignUp, close }) => {
                     {preview ? (
                       <img className="w-24 rounded-full" src={preview} alt="" />
                     ) : (
-                      <img className="w-24" src={"./image-upload.png"} alt="" />
+                      <img className="w-24" src={uploadImage} alt="" />
                     )}
                   </label>
                   <input
