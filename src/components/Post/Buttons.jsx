@@ -22,29 +22,29 @@ const Buttons = ({ post }) => {
   return (
     <div className="flex gap-2 justify-between mt-7 items-center">
       <div className="flex justify-between w-4/5 text-gray-500">
-        <button className="hover:text-blue-500 hover:bg-sky-950/50 rounded-full transition p-2 flex items-center gap-1">
-          <FaRegComment size={16} /> 13
+        <button className="hover:text-blue-500 hover:bg-sky-950/50 rounded-full transition p-2 flex items-center gap-1 text-sm">
+          <FaRegComment size={14} /> 13
         </button>
-        <button className="hover:text-green-500 hover:bg-green-950/50 rounded-full transition p-2 flex items-center gap-1">
-          <AiOutlineRetweet size={20} /> 7
+        <button className="hover:text-green-500 hover:bg-green-950/50 rounded-full transition p-2 flex items-center gap-1 text-sm">
+          <AiOutlineRetweet size={17} /> 7
         </button>
         <button
           onClick={toggleLike}
-          className="hover:text-red-500 hover:bg-red-950/50 rounded-full transition p-2 flex items-center gap-1"
+          className="hover:text-red-500 hover:bg-red-950/50 rounded-full transition p-2 flex items-center gap-1 text-sm"
         >
           {!isLike ? <FaRegHeart /> : <FaHeart color="red" />}{" "}
           {post.likes.length > 0 ? post.likes.length : ""}
         </button>
-        <button className="hover:text-blue-500 hover:bg-sky-950/50 rounded-full transition p-2 flex items-center gap-1">
-          <IoIosStats size={20} /> 1B
+        <button className="hover:text-blue-500 hover:bg-sky-950/50 rounded-full transition p-2 flex items-center gap-1 text-sm">
+          <IoIosStats size={17} /> 1B
         </button>
       </div>
       <div className="flex text-gray-500 cursor-pointer">
         <span className="hover:text-blue-500 hover:bg-sky-950/50 rounded-full transition p-2 ">
-          <CiBookmark size={20} />
+          <CiBookmark size={17} />
         </span>
-        <span className="hover:text-blue-500 hover:bg-sky-950/50 rounded-full transition p-2 ">
-          <RiShare2Line size={20} />
+        <span className="hover:text-blue-500 hover:bg-sky-950/50 rounded-full transition p-2  ">
+          <RiShare2Line size={17} />
         </span>
       </div>
     </div>

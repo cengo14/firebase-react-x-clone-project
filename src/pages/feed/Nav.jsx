@@ -40,7 +40,7 @@ const Nav = ({ value, loading }) => {
             {value.userData?.avatarURL !== null &&
             value.currentUser?.photoURL !== null ? (
               <img
-                className="rounded-full w-12"
+                className="rounded-full size-12 max-md:size-8"
                 src={
                   value.userData
                     ? value.userData?.avatarURL
@@ -49,7 +49,11 @@ const Nav = ({ value, loading }) => {
                 alt="user"
               />
             ) : (
-              <img className="rounded-full w-12" src={avatarPic} alt="user" />
+              <img
+                className="rounded-full size-12 max-md:size-8"
+                src={avatarPic}
+                alt="user"
+              />
             )}
 
             <div className="max-md:hidden flex flex-col gap-[2px]">

@@ -123,14 +123,18 @@ const Form = ({ isSignUp, setIsSignUp, close }) => {
   };
 
   return (
-    <div className="fixed inset-0 pt-5 bg-zinc-700/25 grid place-items-center z-[999]">
-      <div className="bg-black w-4/6 max-w-[700px] rounded-2xl text-end p-4">
-        <button type="button" onClick={close} className="text-xl font-bold  ">
+    <div className="fixed inset-0 pt-5 bg-zinc-700/80 grid place-items-center z-[999]">
+      <div className="bg-black w-4/6 max-w-[700px] rounded-2xl text-end p-4 max-md:p-1">
+        <button
+          type="button"
+          onClick={close}
+          className="text-xl  border border-gray-600 hover:border-blue-400 hover:text-blue-400 rounded-full px-2"
+        >
           X
         </button>
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col text-start gap-3 py-12 px-28 max-md:px-16 max-md:py-8 "
+          className="flex flex-col text-start gap-3 py-12 px-28 max-md:px-10 max-md:py-6 "
         >
           <img className="w-20 mx-auto" src={xLogo} alt="" />
           {isSignUp && (
@@ -196,7 +200,7 @@ const Form = ({ isSignUp, setIsSignUp, close }) => {
                 onChange={(e) => setPassword(e.target.value)}
                 id="password"
                 type={isPassword ? "text" : "password"}
-                className="shadow-none w-[90%] rounded-2xl"
+                className="shadow-none w-[90%] max-md:w-[85%] rounded-2xl"
               />
               <button
                 type="button"

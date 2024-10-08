@@ -29,7 +29,7 @@ const Main = ({ value, loading }) => {
   }, []);
 
   return (
-    <main className="border-l border-r border-zinc-700 overflow-y-auto hide-scrollbar">
+    <main className="w-auto border-l border-r border-zinc-700 overflow-y-auto hide-scrollbar overflow-x-hidden">
       <header className="border-b border-zinc-600 p-4 font-bold">
         Anasayfa
       </header>
