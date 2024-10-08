@@ -6,13 +6,23 @@ import Buttons from "./Buttons";
 import RightMenu from "./RightMenu";
 
 const Post = ({ post, value }) => {
+  console.log(post);
+
   return (
     <div className="border-b border-zinc-600 p-5 flex gap-3 items-start">
-      <img
-        className="size-12 rounded-full"
-        src={post.user.photo}
-        alt="user-avatar"
-      />
+      {post.user.photo ? (
+        <img
+          className="size-12 rounded-full"
+          src={post.user.photo}
+          alt="user-avatar"
+        />
+      ) : (
+        <img
+          className="size-12 rounded-full"
+          src="./public/avatar.png"
+          alt="user-avatar"
+        />
+      )}
       <div className="w-full">
         <div className="flex justify-between">
           <UserInfo post={post} />

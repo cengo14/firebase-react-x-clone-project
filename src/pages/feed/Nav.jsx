@@ -8,6 +8,8 @@ import { BsThreeDots } from "react-icons/bs";
 import ExitModal from "../../components/modal/ExitModal";
 
 const Nav = ({ value, loading }) => {
+  console.log(value);
+
   const [isExit, setIsExit] = useState(false);
   return (
     <nav className="flex flex-col justify-between items-center py-4">
@@ -39,19 +41,27 @@ const Nav = ({ value, loading }) => {
             onClick={() => setIsExit(!isExit)}
             className="flex items-center gap-2 relative cursor-pointer"
           >
-            <img
-              className="rounded-full w-10"
-              src={
-                value.userData
-                  ? value.userData?.avatarURL
-                  : value.currentUser
-                  ? value.currentUser.photoURL
-                  : "avatar.png"
-              }
-              alt="user"
-            />
-            <div className="max-md:hidden flex flex-col gap-1">
-              <p className="text-sm font-semibold">
+            {value.userData.avatarURL !== null &&
+            value.currentUser.photoURL !== null ? (
+              <img
+                className="rounded-full w-12"
+                src={
+                  value.userData
+                    ? value.userData.avatarURL
+                    : value.currentUser.photoURL
+                }
+                alt="user"
+              />
+            ) : (
+              <img
+                className="rounded-full w-12"
+                src="./public/avatar.png"
+                alt="user"
+              />
+            )}
+
+            <div className="max-md:hidden flex flex-col gap-[2px]">
+              <p className=" font-semibold">
                 {value.userData
                   ? value.userData?.name
                   : value.currentUser

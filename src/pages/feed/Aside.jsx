@@ -12,10 +12,10 @@ const Aside = () => {
   ];
   return (
     <div className="max-xl:hidden px-10 py-3">
-      <div className="w-full bg-zinc-800 rounded-full flex items-center px-4 gap-3">
+      <div className="w-full bg-zinc-800 rounded-full flex items-center px-4 gap-3 ">
         <IoSearchOutline size={21} color="gray" />
         <input
-          className="shadow-none bg-transparent  pb-3"
+          className="shadow-none bg-transparent text-white  pb-3"
           type="text"
           placeholder="Ara"
         />
